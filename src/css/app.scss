@@ -1,1 +1,72 @@
 // app global css in SCSS form
+
+// * {
+// 	letter-spacing: 0.08em;
+// }
+* {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	font-family: "RobotoCondensed", Arial;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	letter-spacing: normal;
+	line-height: 1.25em;
+
+	user-select: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 auto;
+	font-variant-caps: small-caps;
+}
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+	// margin: 0 auto;
+	font-variant-caps: small-caps;
+}
+.txt-spaced-1 {
+	letter-spacing: 0.2em;
+}
+
+//_ .q-placeholder {
+//_ 	font-size: 0.5rem;
+//_ }
+.q-field__label {
+	// font-size: 1.25rem;
+	font-size: 1.25rem;
+}
+.q-field__prefix {
+	font-size: 1.2rem;
+}
+
+.q-notification__message {
+	font-size: 1.5rem;
+	font-variant-caps: small-caps;
+}
+
+.text-inzuki {
+	color: #37474f;
+}
+.bg-inzuki {
+	background: #eceff1;
+}
+
+.no-selection {
+	user-select: none;
+}
