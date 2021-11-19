@@ -14,12 +14,9 @@ try {
   }
 } catch (_) {}
 
+//* ------------------------------- MAIN WINDOW ------------------------------ */
 let mainWindow
-
 function createWindow () {
-  /**
-   * Initial window options
-   */
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 600,
@@ -31,7 +28,6 @@ function createWindow () {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: true,
-
       // nodeIntegration: true,
       // More info: /quasar-cli/developing-electron-apps/electron-preload-script
       preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD)
