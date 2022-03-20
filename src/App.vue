@@ -15,6 +15,5 @@ export default defineComponent({
 @font-face {
   font-family: "RobotoCondensed";
   src: url("../public/fonts/RobotoCondensed-Regular.ttf") format("truetype");
-  //_ src: url('./assets/fonts/RobotoCondensed-Regular.ttf') format('truetype');
 }
 </style>
