@@ -1,18 +1,21 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header elevated class="text-white q-electron-drag no-scroll shadow-3 absolute-top " height-hint="98">
+    <q-header
+      elevated
+      class="text-white q-electron-drag no-scroll shadow-3 fixed-top q-py-none"
+      >
       <q-toolbar class="row">
         <div class="col-1">
-          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+          <q-btn dense flat round size="16px" icon="menu" @click="toggleLeftDrawer" />
         </div>
 
         <q-toolbar-title class="col-grow text-center">
           <q-img
             src="~assets/img/Noctua001-LabelWhite.svg"
             fit="scale-down"
-            height="32px"
-            img-class="logo-blur"
+            height="28px"
+            class="fixed-top q-mt-sm q-mb-none"
           />
         </q-toolbar-title>
 
@@ -22,8 +25,12 @@
 
       </q-toolbar>
 
-      <q-tabs align="left" class="bg-grey-12 text-primary text-weight-bold">
-        <q-route-tab to="/page1" label="Calendário" class=""/>
+      <q-tabs
+        align="left"
+        class="bg-grey-12 text-primary text-weight-bold"
+        style="height: 36px"
+        >
+        <q-route-tab to="/page1" label="Calendário"/>
         <q-route-tab to="/page3" label="Ciclo" />
         <q-route-tab to="/page2" label="Registros" />
       </q-tabs>
@@ -44,7 +51,7 @@
     <!-- <q-drawer elevated show-if-above v-model="rightDrawerOpen" side="right" bordered>
     </q-drawer> -->
 
-    <q-page-container class="bg-grey-10">
+    <q-page-container class="bg-grey-8">
       <router-view />
     </q-page-container>
 
