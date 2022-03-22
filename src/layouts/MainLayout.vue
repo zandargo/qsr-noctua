@@ -12,6 +12,7 @@
             src="~assets/img/Noctua001-LabelWhite.svg"
             fit="scale-down"
             height="32px"
+            img-class="logo-blur"
           />
         </q-toolbar-title>
 
@@ -79,3 +80,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
