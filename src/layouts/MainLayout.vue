@@ -36,6 +36,7 @@
       side="left"
       overlay
       bordered
+      class="bg-grey-4"
     >
       <!-- drawer content -->
     </q-drawer>
