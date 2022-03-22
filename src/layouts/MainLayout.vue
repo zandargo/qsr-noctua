@@ -8,7 +8,11 @@
         </div>
 
         <q-toolbar-title class="col-grow text-center">
-          NOCTUA
+          <q-img
+            src="~assets/img/Noctua001-LabelWhite.svg"
+            fit="scale-down"
+            height="32px"
+          />
         </q-toolbar-title>
 
         <div class="col-1">
