@@ -96,7 +96,7 @@ export default {
     min-height: 120px;
     max-width: 85%;
     max-height: 75%;
-    opacity: 50%
+    opacity: 90%
   }
   .container-logo {
     height: calc(100vh - 80px);
