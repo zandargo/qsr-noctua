@@ -8,6 +8,7 @@
       >
     </div>
 
+    <!-- //* -------------------------------- HEADER -------------------------------- *// -->
     <q-header
       class="text-white q-electron-drag no-scroll fixed-top q-py-none"
       >
@@ -27,6 +28,7 @@
 
         <div class="col-1">
           <!-- <q-btn dense flat round icon="calendar_today" @click="toggleRightDrawer" /> -->
+          <q-btn dense flat round icon="login" @click="toggleRightDrawer" />
         </div>
       </q-toolbar>
 
@@ -43,16 +45,29 @@
 
     </q-header>
 
+    <!-- //* -------------------------------- DRAWER -------------------------------- *// -->
     <q-drawer
       elevated
       v-model="leftDrawerOpen"
       side="left"
       overlay
-      class="bg-grey-4"
     >
-      <!-- drawer content -->
+      <div class="absolute-top bg-info" style="height: 160px; width: calc(100% + 1px)">
+        <div class="absolute-bottom bg-transparent text-white q-pa-md">
+          <!-- <q-avatar size="56px" class="q-mb-sm">
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+          </q-avatar> -->
+          <div class="text-weight-medium">Kely Galvão</div>
+          <div class="text-caption">@estudakely</div>
+        </div>
+      </div>
+
+      <q-scroll-area style="height: calc(100% - 160px); margin-top: 160px" class="bg-grey-4">
+        <DrawerSections />
+      </q-scroll-area>
     </q-drawer>
 
+    <!-- //* ------------------------------- MAIN PAGE ------------------------------ *// -->
     <q-page-container tranparent class="q-ma-md">
       <router-view />
     </q-page-container>
@@ -70,8 +85,12 @@
 
 <script>
 import { ref } from 'vue'
+import DrawerSections from 'components/DrawerSections.vue'
 
 export default {
+  components: {
+    DrawerSections
+  },
   setup () {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)

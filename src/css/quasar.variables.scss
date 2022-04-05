@@ -9,29 +9,16 @@
 // // ones will be available out of the box in your .vue/.scss/.sass files
 
 // //* -------------------------------- COLORS -------------------------------- *//
-$primary: #162358;
-$secondary: #26a69a;
-$accent: #9c27b0;
+$primary: hsl(228, 60%, 22%);
+$secondary: hsl(228, 60%, 40%);
+$accent: hsl(291, 64%, 42%);
 
 $dark: #1d1d1d;
 
-$positive: #4caf50;
-$negative: #f44336;
-$info: #3f51b5;
-$warning: #ffc107;
-
-//* Esquema de cores original
-// $bgToday: #ab47bc;
-// $bgWorkDay: #fffde7;
-// $bgFreeDay: #dcedc8;
-// $bgHollyday: #b3e5fc;
-
-//* Esquema de cores 01
-$bgToday: #0077b5;
-$bgWorkDay: #fafafa;
-// $bgFreeDay: #a5d6a7;
-$bgFreeDay: #c8e6c9;
-$bgHollyday: #bbdefb;
+$positive: hsl(122, 32%, 49%);
+$negative: hsl(4, 80%, 58%);
+$info: hsl(208, 60%, 40%);
+$warning: hsl(45, 80%, 51%);
 
 // //* ------------------------------------------------------------------------ *//
 // //*                             QUASAR VARIABLES                             *//
