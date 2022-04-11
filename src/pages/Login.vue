@@ -4,25 +4,27 @@
 </template>
 
 <script setup>
-
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import firebase from 'firebase/compat/app'
 import 'firebaseui/dist/firebaseui.css'
 import { ui } from 'boot/firebase'
 
+const router = useRouter()
+const store = useStore()
+
 onMounted(() => {
-  // const ui = new firebaseui.auth.AuthUI(firebase.auth())
   ui.start('#firebaseui-auth-container', {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-        return true
+        store.commit('user/mutLoggedStatus', true)
+        const User = firebase.auth().currentUser
+        store.commit('user/mutUserInfo', User)
+        return router.push('page1')
       },
       uiShown: function () {
-      // The widget is rendered.
-      // Hide the loader.
+      // The widget is rendered. Hide the loader.
         document.getElementById('loader').style.display = 'none'
       }
     },
@@ -34,7 +36,6 @@ onMounted(() => {
       //_ firebase.auth.TwitterAuthProvider.PROVIDER_ID,
       //_ firebase.auth.GithubAuthProvider.PROVIDER_ID
     ]
-    // Other config options...
   })
 })
 

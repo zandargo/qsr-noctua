@@ -1,6 +1,8 @@
 export default function () {
   const info = {
-    name: null
+    id: null,
+    name: null,
+    email: null
   }
   const status = {
     isLoggedIn: false
