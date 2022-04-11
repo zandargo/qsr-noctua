@@ -28,7 +28,7 @@
 
         <div class="col-1">
           <!-- <q-btn dense flat round icon="calendar_today" @click="toggleRightDrawer" /> -->
-          <q-btn dense flat round icon="login" @click="toggleRightDrawer" />
+          <q-btn dense flat round to="/login" icon="login" />
         </div>
       </q-toolbar>
 
