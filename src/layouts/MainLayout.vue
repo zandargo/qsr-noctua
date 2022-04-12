@@ -33,12 +33,13 @@
       </q-toolbar>
 
       <q-tabs
+        v-if="isLoggedIn"
         dense
         align="left"
         breakpoint="600"
         class="bg-indigo-8 text-bluegrey-2"
         >
-        <q-route-tab to="/page1" icon="event" class="item-center"/>
+        <q-route-tab to="/page1" icon="event"/>
         <q-route-tab to="/page3" icon="change_circle"/>
         <q-route-tab to="/page2" icon="list_alt" />
       </q-tabs>
@@ -52,17 +53,20 @@
       side="left"
       overlay
     >
-      <div class="absolute-top bg-info" style="height: 160px; width: calc(100% + 1px)">
+      <div class="absolute-top bg-info" style="height: 128px; width: calc(100% + 1px)">
         <div class="absolute-bottom bg-transparent text-white q-pa-md">
           <!-- <q-avatar size="56px" class="q-mb-sm">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
           </q-avatar> -->
-          <div class="text-weight-medium">Kely Galvão</div>
-          <div class="text-caption">@estudakely</div>
+          <div class="text-weight-medium">{{ userName }}</div>
+          <div class="text-caption">{{ userEmail }}</div>
         </div>
       </div>
 
-      <q-scroll-area style="height: calc(100% - 160px); margin-top: 160px" class="bg-grey-4">
+      <q-scroll-area
+        style="height: calc(100% - 120px); margin-top: 120px"
+        class="bg-grey-4"
+      >
         <DrawerSections />
       </q-scroll-area>
     </q-drawer>
@@ -84,8 +88,9 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import DrawerSections from 'components/DrawerSections.vue'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -94,6 +99,19 @@ export default {
   setup () {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
+    const store = useStore()
+    const isLoggedIn = computed(() => {
+      return store.state.user.status.isLoggedIn
+    })
+    const userInfo = computed(() => {
+      return store.state.user.info
+    })
+    const userName = computed(() => {
+      return isLoggedIn.value ? store.state.user.info.name : 'Usuário Anônimo'
+    })
+    const userEmail = computed(() => {
+      return isLoggedIn.value ? store.state.user.info.email : 'usuario@anonimo'
+    })
 
     return {
       leftDrawerOpen,
@@ -104,7 +122,12 @@ export default {
       rightDrawerOpen,
       toggleRightDrawer () {
         rightDrawerOpen.value = !rightDrawerOpen.value
-      }
+      },
+
+      isLoggedIn,
+      userInfo,
+      userName,
+      userEmail
     }
   }
 }
@@ -114,11 +137,11 @@ export default {
 .logo-back {
     min-height: 120px;
     max-width: 85%;
-    max-height: 75%;
+    max-height: 95%;
     opacity: 90%
   }
   .container-logo {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 50px);
     width: 100vw;
     z-index: -99;
   }
