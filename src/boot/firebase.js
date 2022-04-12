@@ -19,9 +19,9 @@ const firebaseConfig = {
 }
 firebase.initializeApp(firebaseConfig)
 
-export const ui = new firebaseui.auth.AuthUI(firebase.auth())
-
 export const firebaseApp = initializeApp(firebaseConfig)
+
+export const ui = new firebaseui.auth.AuthUI(firebase.auth())
 
 export const auth = getAuth(firebaseApp)
 
